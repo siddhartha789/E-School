@@ -1,0 +1,302 @@
+<html>
+
+	<head>
+    		
+            <title> Online Calculator </title>
+            
+            <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        	<link rel="icon" href="logo.png" type="image/png" />
+    <script>
+	var sum,sum2;
+	var detect=0;
+	function number1()
+	{
+	  // 	var txt=document.getElementById("display").value;
+	//	txt=txt + num;
+	//	document.getElementById("display").value=txt;
+	//var num=document.getElementById("number").value;
+	document.getElementById("display").style.backgroundColor="lightgreen";
+	var txt=document.getElementById("one").value;
+	
+	 
+	 
+		document.getElementById("display").value+=txt;
+		
+	
+	}
+	function number2()
+	{
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		var txt2=document.getElementById("two").value;
+		
+		document.getElementById("display").value+=txt2;
+		
+	}
+	function number3()
+	
+	{
+		
+		document.getElementById("display").style.backgroundColor="skyblue";
+		
+		var txt3=document.getElementById("three").value;
+		
+		document.getElementById("display").value+=txt3;
+		
+	}
+	
+	function number4()
+	{
+		
+		document.getElementById("display").style.backgroundColor="lightgreen";
+		
+		var txt4=document.getElementById("four").value;
+		
+		document.getElementById("display").value+=txt4;
+	}
+	function number5()
+	{
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		var txt5=document.getElementById("five").value;
+		
+		document.getElementById("display").value+=txt5;
+	}
+	function number6()
+	{
+	document.getElementById("display").style.backgroundColor="skyblue";
+		
+		var txt6=document.getElementById("six").value;
+		
+		document.getElementById("display").value+=txt6;	
+	}
+	function number7()
+	{
+		document.getElementById("display").style.backgroundColor="lightgreen";
+		
+		var txt7=document.getElementById("seven").value;
+		
+		document.getElementById("display").value+=txt7;
+		
+	}
+	function number8()
+	{
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		var txt8=document.getElementById("eight").value;
+		
+		document.getElementById("display").value+=txt8;
+	}
+	function number9()
+	{
+		document.getElementById("display").style.backgroundColor="skyblue";
+		
+		var txt9=document.getElementById("nine").value;
+		
+		document.getElementById("display").value+=txt9;
+	}
+	function number0()
+	{
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		var txt0=document.getElementById("zero").value;
+		
+		document.getElementById("display").value+=txt0;
+	}
+	function plu()
+	{	
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		sum2=document.getElementById("display").value;
+		
+	
+		if (detect=="1")
+		{
+			
+			var b=parseInt(sum,10) + parseInt(sum2,10);
+			document.getElementById("display").value=b;
+			sum2=document.getElementById("display").value;
+			document.getElementById("display")="";
+				
+		
+		}
+		else
+		{
+		document.getElementById("display").style.backgroundColor="lightblue";
+		sum=document.getElementById("display").value;
+		document.getElementById("display").value="";
+		detect=1;
+		}
+		
+		
+		
+	}
+	function mi()
+	{
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		sum=document.getElementById("display").value;
+		document.getElementById("display").value="";
+		detect=2;
+	}
+	function multiply()
+	{
+		
+		
+		
+		document.getElementById("display").style.backgroundColor="lightblue";
+		
+		sum=document.getElementById("display").value;
+		
+		document.getElementById("display").value="";
+		
+		
+		
+		detect=3;
+	}
+	function divide()
+	{
+		document.getElementById("display").style.backgroundColor="lightblue";
+			sum=document.getElementById("display").value;
+			
+			document.getElementById("display").value="";
+			
+		
+		detect=4;
+		
+	}
+	function evalute(a)
+	{
+		sum2=document.getElementById("display").value;
+	
+		if(detect=="1")
+		{
+				var b = parseInt(sum,10) + parseInt(sum2,10);
+				
+				document.getElementById("display").value=b;
+		}
+		else if(detect=="2")
+		{
+				var b=parseInt(sum,10) - parseInt(sum2,10)
+			
+				document.getElementById("display").value=b;
+		}
+		
+		else if(detect=="3")
+		{
+				var b=parseInt(sum,10) * parseInt(sum2,10);
+				
+				document.getElementById("display").value=b;
+		}
+		else if(detect=="4")
+		{
+				if(sum2=="0")
+				{
+					alert ("Dividend Could Not Be Zero");
+					return false;
+				}
+				else if(sum2=="")
+				{
+						alert("Please Enter The Dividend");
+						return false;
+				}
+				
+				else
+				{
+						var b=parseInt(sum,10) / parseInt(sum2,10);
+						
+						document.getElementById("display").value=b;
+				}
+				
+		}
+				
+		
+		
+	}
+	function blank()
+	{
+	document.getElementById("display").style.backgroundColor="white";
+	
+	document.getElementById("display").value= "";
+	detect=0;
+		
+	}
+	</script>
+    
+    </head>
+    
+    <body>
+    <div class="container-fluid">
+    	<p style="text-align:center"> Online Calculator Created By :-> <a href="https://www.facebook.com/anoop.passi"> ANOOP </a> </p>
+        <hr>
+    <div class="row col-lg-12">
+    	<div class="col-lg-4">
+        
+        </div>
+        
+        <div class="col-lg-4" style="padding:100px;width:auto">
+        
+        	<div class="panel panel-info">
+           		<div class="panel-heading">
+             		<h3 style="text-align:center"> Online Calculator  </h3>
+        
+        <form name="calc" action="calculator.html"  class="form-group-lg"  >
+        <input type="text" name="display" class="form-control" id="display" value=""  / > <p id="data"> </p>
+         <p> </p>
+         <table class="table">
+         <tr>
+         	<td>  <input type="button" class="btn btn-success" value="1" id="one" style="width:100px" onClick="number1()" >    </td>
+         <td>  <input type="button" class="btn btn-success" value="2" id="two" style="width:100px" name="number" onClick="number2()">     </td>
+         <td> <input type="button" class="btn btn-success" value="3"  id="three" style="width:100px" name="number" onClick="number3()">   </td>
+         
+         </tr>
+         
+         <tr>
+         	<td> <input type="button" class="btn btn-success" value="4" id="four" style="width:100px" name="number" onClick="number4()">  </td>
+            <td> <input type="button" class="btn btn-success" value="5" id="five"style="width:100px" name="number" onClick="number5()">  </td>
+             <td> <input type="button" class="btn btn-success" value="6" id="six"style="width:100px" name="number" onClick="number6()">  </td>
+            </tr>
+            
+         <tr>
+         	<td> <input type="button" class="btn btn-success" value="7" id="seven" style="width:100px" name="number" onClick="number7()">  </td>
+               <td> <input type="button" class="btn btn-success" value="8" id="eight"style="width:100px" name="number" onClick="number8()">  </td>
+            	<td> <input type="button" class="btn btn-success" value="9" id="nine"style="width:100px" name="number" onClick="number9()">  </td>
+                </tr>
+                
+                <tr>
+                <td> <input type="button" class="btn btn-primary" value="*" id="mul"style="width:100px" name="-" onClick="multiply()">  </td>
+            	<td> <input type="button" class="btn btn-success" value="0" id="zero"style="width:100px" name="number" onClick="number0()"> </td>
+            	<td> <input type="button" class="btn btn-primary" value="/" id="divi"style="width:100px" name="/" onClick="divide()">  </td>
+            	</tr>
+                
+                <tr>
+                <td> <input type="button" class="btn btn-danger" value="+" id="plus" style="width:100px" name="+" onClick="plu()">  </td>
+            	<td> <input type="button" class="btn btn-danger" value="-" id="minus" style="width:100px" name="-" onClick="mi()">  </td>
+            	<td> <input type="button" class="btn btn-group" value="=" id="equal" style="width:100px" name="=" onClick="evalute()"> </td>
+            	</tr>
+                <tr>
+                <td> </td>
+                <td>  <input type="button" class="btn btn-sm" value="CLEAR" id="clear" style="width:100px"  onClick="blank()"> </td>
+                <td> </td>
+                </tr>
+            </table>
+         
+        
+        </form>
+            
+            </div>
+        
+        </div>
+        
+        <div class="col-lg-4">
+        
+       </div>
+        
+        </div>
+        </div>
+        </div>
+     </body>
+ 
+     
+</html>
+    		
